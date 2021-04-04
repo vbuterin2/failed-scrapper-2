@@ -1,0 +1,32 @@
+/home/fhforest2/.local/lib/python3.8/site-packages/scrapy/commands/__init__.py:131: ScrapyDeprecationWarning: ('The -t command line option is deprecated in favor of specifying the output format within the output URI. See the documentation of the -o and -O options for more information.',)
+  feeds = feed_process_params_from_cli(
+2021-04-04 16:09:24 [scrapy.utils.log] INFO: Scrapy 2.4.1 started (bot: zoneboursescrapper)
+2021-04-04 16:09:24 [scrapy.utils.log] INFO: Versions: lxml 4.6.3.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 18.9.0, Python 3.8.5 (default, Jan 27 2021, 15:41:15) - [GCC 9.3.0], pyOpenSSL 19.0.0 (OpenSSL 1.1.1f  31 Mar 2020), cryptography 2.8, Platform Linux-5.4.0-65-generic-x86_64-with-glibc2.29
+2021-04-04 16:09:24 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.epollreactor.EPollReactor
+Traceback (most recent call last):
+  File "/home/fhforest2/.local/lib/python3.8/site-packages/scrapy/spiderloader.py", line 75, in load
+    return self._spiders[spider_name]
+KeyError: 'someSpider'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/fhforest2/.local/bin/scrapy", line 8, in <module>
+    sys.exit(execute())
+  File "/home/fhforest2/.local/lib/python3.8/site-packages/scrapy/cmdline.py", line 145, in execute
+    _run_print_help(parser, _run_command, cmd, args, opts)
+  File "/home/fhforest2/.local/lib/python3.8/site-packages/scrapy/cmdline.py", line 100, in _run_print_help
+    func(*a, **kw)
+  File "/home/fhforest2/.local/lib/python3.8/site-packages/scrapy/cmdline.py", line 153, in _run_command
+    cmd.run(args, opts)
+  File "/home/fhforest2/.local/lib/python3.8/site-packages/scrapy/commands/crawl.py", line 22, in run
+    crawl_defer = self.crawler_process.crawl(spname, **opts.spargs)
+  File "/home/fhforest2/.local/lib/python3.8/site-packages/scrapy/crawler.py", line 191, in crawl
+    crawler = self.create_crawler(crawler_or_spidercls)
+  File "/home/fhforest2/.local/lib/python3.8/site-packages/scrapy/crawler.py", line 224, in create_crawler
+    return self._create_crawler(crawler_or_spidercls)
+  File "/home/fhforest2/.local/lib/python3.8/site-packages/scrapy/crawler.py", line 228, in _create_crawler
+    spidercls = self.spider_loader.load(spidercls)
+  File "/home/fhforest2/.local/lib/python3.8/site-packages/scrapy/spiderloader.py", line 77, in load
+    raise KeyError(f"Spider not found: {spider_name}")
+KeyError: 'Spider not found: someSpider'

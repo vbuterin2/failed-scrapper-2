@@ -1,0 +1,18 @@
+        print("Opening URL: " + url)
+
+        if "/societe" in url:
+            html_saver.save_html(response, 2)
+            yield {
+                'url': response.url
+            }
+        elif "/fondamentaux" in url:
+            html_saver.save_html(response, 3)
+            yield {
+                'url': response.url
+            }
+        elif "/consensus" in url:
+            html_saver.save_html(response, 4)
+            yield {
+                'url': response.url
+            }
+        else:
